@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖与节流演示</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .demo-section {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .input-area {
+        margin-bottom: 10px;
+      }
+      .output-area {
+        min-height: 100px;
+        border: 1px solid #eee;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+      .event-log {
+        margin-top: 10px;
+        font-family: monospace;
+        font-size: 14px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .btn {
+        padding: 8px 15px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .scroll-area {
+        height: 200px;
+        overflow-y: scroll;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f5f5f5;
+      }
+      .scroll-content {
+        height: 1000px;
+        background: linear-gradient(to bottom, #ffffff, #ccccff);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>防抖与节流演示</h1>
+
+    <div class="container">
+      <div class="demo-section">
+        <h2>输入框防抖演示</h2>
+        <p>当用户停止输入300ms后才触发搜索，避免频繁请求</p>
+        <div class="input-area">
+          <input
+            type="text"
+            id="debounce-input"
+            placeholder="请输入搜索内容..."
+            style="width: 300px; padding: 5px"
+          />
+        </div>
+        <div class="output-area">
+          <div>搜索结果：<span id="debounce-result">无</span></div>
+          <div>原始输入次数：<span id="raw-input-count">0</span></div>
+          <div>防抖后触发次数：<span id="debounce-count">0</span></div>
+          <div class="event-log" id="debounce-log"></div>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>按钮点击节流演示</h2>
+        <p>无论点击多快，每1000ms最多触发一次</p>
+        <button id="normal-btn" class="btn">普通按钮</button>
+        <button id="throttle-btn" class="btn">节流按钮</button>
+        <div class="output-area">
+          <div>普通按钮点击次数：<span id="normal-click-count">0</span></div>
+          <div>节流后触发次数：<span id="throttle-count">0</span></div>
+          <div class="event-log" id="throttle-log"></div>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>滚动事件节流演示</h2>
+        <p>滚动时节流处理位置更新，每100ms最多触发一次</p>
+        <div class="scroll-area" id="scroll-area">
+          <div class="scroll-content"></div>
+        </div>
+        <div class="output-area">
+          <div>原始滚动事件次数：<span id="raw-scroll-count">0</span></div>
+          <div>节流后触发次数：<span id="throttle-scroll-count">0</span></div>
+          <div>当前位置：<span id="scroll-position">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

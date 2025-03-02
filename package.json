@@ -1,0 +1,18 @@
+{
+  "name": "debounce-throttle",
+  "version": "1.0.0",
+  "description": "手写实现防抖与节流函数 | Handwritten implementation of debounce and throttle functions",
+  "main": "utils.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "debounce",
+    "throttle",
+    "javascript",
+    "performance",
+    "optimization"
+  ],
+  "author": "",
+  "license": "MIT"
+}
