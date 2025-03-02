@@ -11,7 +11,14 @@
 
 ### 可视化演示
 
-可以通过 `index.html` 文件查看可视化演示效果，展示了防抖和节流在实际应用中的表现差异。
+- **[在线演示](http://blog.ltlyl.fun/Debounce-and-Throttle/)**: 直接访问在线演示页面，体验防抖和节流效果
+- **本地演示**: 通过 `index.html` 文件在本地查看可视化演示效果
+
+在线演示页面展示了防抖和节流在实际应用中的表现差异，包括：
+
+- 输入框防抖示例
+- 按钮点击节流示例
+- 滚动事件节流示例
 
 ### 运行测试
 
@@ -32,7 +39,14 @@ npm test
 
 ### Visual Demo
 
-You can view the visual demonstration through the `index.html` file, which shows the differences between debounce and throttle in practical applications.
+- **[Live Demo](http://blog.ltlyl.fun/Debounce-and-Throttle/)**: Access the online demonstration page to experience debounce and throttle effects
+- **Local Demo**: View the visual demonstration locally through the `index.html` file
+
+The live demo shows the differences between debounce and throttle in practical applications, including:
+
+- Input box debounce example
+- Button click throttle example
+- Scroll event throttle example
 
 ### Running Tests
 
